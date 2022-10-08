@@ -6,11 +6,7 @@ let createElement = function(){
     let element = document.createElement("div")
     element.className = "list-element"
     element.innerHTML = info.value
-    list.appendChild(element)
-
-    let done = document.createElement("i")
-    done.className = "fa-solid fa-check"
-  
+    list.appendChild(element)  
     let close = document.createElement("span")
     close.className = "emenet__remove"
     close.innerHTML = "x"
