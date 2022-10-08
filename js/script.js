@@ -6,14 +6,23 @@ let createElement = function(){
     let element = document.createElement("div")
     element.className = "list-element"
     element.innerHTML = info.value
-    let done = document.createElement("i")
-    done.className="fas fa-check-square"
-    done.style.display = "none"
     list.appendChild(element)
+
+    let done = document.createElement("i")
+    done.className = "fa-solid fa-check"
+  
+    let close = document.createElement("span")
+    close.className = "emenet__remove"
+    close.innerHTML = "x"
+    close.style.cursor = "pointer"
+    element.appendChild(close)
     element.addEventListener('click', ()=>{
         element.classList.toggle('active')
     })
-    element.before(done)
+
+    close.addEventListener('click', function() {
+        element.remove()
+    })
 }
 
 button.addEventListener('click', function() {
